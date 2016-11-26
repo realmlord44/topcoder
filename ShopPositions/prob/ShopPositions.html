@@ -1,0 +1,120 @@
+<html>
+<head>
+    <title>ShopPositions</title>
+</head>
+<body>
+<h1><a href="/tc?module=ProblemDetail&amp;rd=16547&amp;pm=13884">ShopPositions</a></h1>
+
+<p><em>Single Round Match 667 Round 1 - Division II, Level Three</em></p>
+
+<h2>Statement</h2>
+
+<p>Carol is starting a new taco shop business.
+She is going to open some taco shops in a block of buildings.
+The blocks consists of <em>n</em> adjacent buildings in a row.
+Each building has exactly <em>m</em> floors.
+The buildings are numbered 0 through <em>n</em>-1 in order.</p>
+
+<p>Carol can open between 0 and <em>m</em> taco shops in each building (as there can be at most one taco shop per floor in each building).
+For each taco shop, the profit P[x][y] will depend on two factors:</p>
+
+<p>the number x of the building that contains this taco shop
+the total count y of taco shops in that particular building and in buildings adjacent to that building (including this particular taco store)</p>
+
+<p>You are given the ints <em>n</em> and <em>m</em>.
+You are also given the profits as defined above, encoded into a int[] <em>c</em>.
+For each x between 0 and <em>n</em>-1, and for each y between 1 and 3<em>m</em>, the profit P[x][y] is given in <em>c</em>[x<em>3**m</em>+y-1].</p>
+
+<p>It is guaranteed that the profits don't increase as y increases. That is, for each valid x and y, P[x][y] will be greater than or equal to P[x][y+1].
+Note that the profit is for a single store.
+For example, if there are three taco stores in building 7 and no other stores in buildings 6 and 8, each of these three taco stores will bring the profit P[7][3].</p>
+
+<p>Determine and return the maximum total profit that Carol can gain from opening the taco shops.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>ShopPositions</code></li>
+<li><em>Method</em>: <code>maxProfit</code></li>
+<li><em>Parameters</em>: <code>int, int, int[]</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int maxProfit(int n, int m, int[] c)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>n</em> will be between 1 and 30, inclusive.</li>
+<li><em>m</em> will be between 1 and 30, inclusive.</li>
+<li><em>c</em> will have exactly n<em>3</em>m elements.</li>
+<li>Each element of <em>c</em> will be between 1 and 1,000, inclusive.</li>
+<li>For each x between 0 and <em>n</em>-1, the sequence <em>c</em>[3<strong>m</strong>x], <em>c</em>[3<strong>m</strong>x + 1], ..., <em>c</em>[3<strong>m</strong>(x+1) - 1] will be sorted in nonincreasing order</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>1,<br />5,<br />[100, 90, 80, 70, 60, 50, 40, 30, 20, 10, 1, 1, 1, 1, 1]</c></p>
+
+<h4>Output</h4>
+
+<p><c>300</c></p>
+
+<h4>Reason</h4>
+
+<p>Carol has 1 building with 5 floors.</p>
+
+<p>Building one shop will get her a profit of 100, while building two shops will get a profit of 90<em>2.
+The optimal strategy in this case is to build 5 taco shops, for a profit of 60</em>5=300.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>1,<br />5,<br />[1000, 5, 4, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]</c></p>
+
+<h4>Output</h4>
+
+<p><c>1000</c></p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>3,<br />1,<br />[<br />  7,6,1,<br />  10,4,1,<br />  7,6,3<br />]</c></p>
+
+<h4>Output</h4>
+
+<p><c>14</c></p>
+
+<h4>Reason</h4>
+
+<p>The optimal strategy here is to open one taco store in building 0 and one taco store in building 2.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>2,<br />2,<br />[<br /> 12,11,10,9,8,7,<br /> 6,5,4,3,2,1<br />]</c></p>
+
+<h4>Output</h4>
+
+<p><c>24</c></p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>3,<br />3,<br />[<br />  30,28,25,15,14,10,5,4,2,<br />  50,40,30,28,17,13,8,6,3,<br />  45,26,14,14,13,13,2,1,1<br />]</c></p>
+
+<h4>Output</h4>
+
+<p><c>127</c></p>
+
+</body>
+</html>
